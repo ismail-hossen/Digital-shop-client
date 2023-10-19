@@ -1,5 +1,3 @@
-// src/AddProduct.js
-
 import { useState } from "react";
 import Rating from "react-rating-stars-component";
 

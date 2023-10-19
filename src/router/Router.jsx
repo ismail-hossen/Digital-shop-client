@@ -7,6 +7,7 @@ import Login from "../pages/login/Login";
 import Register from "../pages/login/Register";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import BrandDetails from "../pages/brandDetails/BrandDetails";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "/brand-details/:brand", element: <BrandDetails /> },
       {
         path: "/add-product",
         element: (
