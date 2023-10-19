@@ -1,17 +1,19 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../authContext/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const { login, googleLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = (mail, pass) => {
     login(mail, pass)
-      .then((userCredential) => {
-        const user = userCredential.user;
+      .then(() => {
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         const errorMessage = error.message;
