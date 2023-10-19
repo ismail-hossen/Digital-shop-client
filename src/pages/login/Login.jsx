@@ -1,13 +1,35 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../authContext/AuthContext";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const { login, googleLogin } = useContext(AuthContext);
 
-  const handleLogin = () => {};
+  const handleLogin = (mail, pass) => {
+    login(mail, pass)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      });
+  };
 
-  const handleGoogleLogin = () => {};
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result?.user;
+        console.log("from login page in google login", user);
+      })
+      .catch((error) => {
+        const errorMessage = error?.message;
+        setError(errorMessage);
+      });
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -32,7 +54,7 @@ const Login = () => {
         </div>
         <button
           className="bg-blue-500 text-white p-2 rounded w-full mb-2"
-          onClick={handleLogin}
+          onClick={() => handleLogin(email, password)}
         >
           Login
         </button>
@@ -44,7 +66,10 @@ const Login = () => {
         </button>
         <div className="mt-4">
           <p>
-            Don't have an account? <a href="/register">Register here</a>
+            Don&apos;t have an account?{" "}
+            <Link to="/register" className="text-blue-400 hover:underline">
+              Register here
+            </Link>
           </p>
         </div>
       </div>

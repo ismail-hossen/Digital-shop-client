@@ -1,9 +1,19 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Banner from "./Banner";
+import { useContext } from "react";
+import { AuthContext } from "../../authContext/AuthContext";
 
 const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
   const location = useLocation();
-  const user = false;
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout().then(() => {
+      navigate("/");
+    });
+  };
+
   return (
     <>
       <div className="navbar">
@@ -67,7 +77,12 @@ const Navbar = () => {
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <img
+                      src={
+                        user.photoURL ||
+                        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&q=80&w=1931&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      }
+                    />
                   </div>
                 </label>
                 <ul
@@ -84,7 +99,7 @@ const Navbar = () => {
                     <a>Settings</a>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <Link onClick={handleLogout}>Logout</Link>
                   </li>
                 </ul>
               </div>
