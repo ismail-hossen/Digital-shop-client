@@ -12,11 +12,7 @@ const Register = () => {
     const img = new FormData();
     img.append("image", form[4]?.files[0]);
 
-    const url = `https://api.imgbb.com/1/upload?expiration=600&key=${
-      import.meta.env.VITE_imgBB_apiKey
-    }`;
-
-    const response = await fetch(url, {
+    const response = await fetch(import.meta.env.VITE_imgBB_apiKey, {
       method: "POST",
       body: img,
     });

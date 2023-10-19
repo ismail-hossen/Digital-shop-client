@@ -1,5 +1,7 @@
+import BrandList from "../../components/brand/BrandList";
+
 const Home = () => {
-  return <div>home page</div>;
+  return <BrandList />;
 };
 
 export default Home;
