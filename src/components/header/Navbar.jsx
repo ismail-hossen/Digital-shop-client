@@ -1,12 +1,19 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Banner from "./Banner";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../authContext/AuthContext";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+  const [myCart, setMyCart] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/add-to-cart/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setMyCart(data));
+  }, [user]);
 
   const handleLogout = () => {
     logout().then(() => {
@@ -56,7 +63,9 @@ const Navbar = () => {
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                       />
                     </svg>
-                    <span className="badge badge-sm indicator-item">8</span>
+                    <span className="badge badge-sm indicator-item">
+                      {myCart.length}
+                    </span>
                   </div>
                 </label>
                 <div
@@ -64,12 +73,14 @@ const Navbar = () => {
                   className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
                 >
                   <div className="card-body">
-                    <span className="font-bold text-lg">8 Items</span>
+                    <span className="font-bold text-lg">
+                      {myCart.length} Items
+                    </span>
                     <span className="text-info">Subtotal: $999</span>
                     <div className="card-actions">
-                      <button className="btn btn-primary btn-block">
+                      <Link to="/my-cart" className="btn btn-primary btn-block">
                         View cart
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

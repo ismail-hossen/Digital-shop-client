@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Rating from "react-rating-stars-component";
+import { useParams } from "react-router-dom";
 
 function AddProduct() {
   const [rating, setRating] = useState(0);
+  const [product, setProduct] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (id) {
+      fetch(`http://localhost:3000/product-by-id/${id}`)
+        .then((res) => res.json())
+        .then((data) => setProduct(data));
+    }
+  }, [id]);
 
   const handleRatingChange = (rating) => setRating(rating);
 
@@ -57,6 +68,7 @@ function AddProduct() {
             <input
               type="text"
               name="name"
+              defaultValue={product && product.name}
               placeholder="Name"
               className="w-full px-4 py-2 border rounded"
             />
@@ -65,15 +77,22 @@ function AddProduct() {
             <input
               type="text"
               name="brand"
+              defaultValue={product && product.brandName}
               placeholder="Brand Name"
               className="w-full px-4 py-2 border rounded "
             />
           </div>
           <div className="mb-4">
-            <select name="type" className="w-full px-4 py-2 border rounded ">
+            <select
+              defaultValue={product && product.type}
+              name="type"
+              className="w-full px-4 py-2 border rounded "
+            >
               <option value="">Select Type</option>
               <option value="phone">Phone</option>
+              <option value="tab">Tab</option>
               <option value="computer">Computer</option>
+              <option value="laptop">Laptop</option>
               <option value="headphone">Headphone</option>
             </select>
           </div>
@@ -81,6 +100,7 @@ function AddProduct() {
             <input
               type="number"
               name="price"
+              defaultValue={product && product.price}
               placeholder="Price"
               className="w-full px-4 py-2 border rounded"
             />
@@ -88,6 +108,7 @@ function AddProduct() {
           <div className="mb-4">
             <textarea
               name="description"
+              defaultValue={product && product.description}
               placeholder="Short description"
               className="w-full px-4 py-2 border rounded"
             />
@@ -96,6 +117,7 @@ function AddProduct() {
             <label className="block text-gray-600">Upload Image:</label>
             <input
               type="file"
+              defaultValue={product && product.image}
               accept="image/*"
               name="image"
               className="w-full py-2 border rounded"
@@ -106,7 +128,7 @@ function AddProduct() {
             <Rating
               count={5}
               size={30}
-              value={rating}
+              value={product ? product.rating : rating}
               onChange={handleRatingChange}
             />
           </div>
@@ -114,7 +136,7 @@ function AddProduct() {
             type="submit"
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-all duration-300"
           >
-            Add
+            {product ? "Update" : "Add"}
           </button>
         </form>
       </div>

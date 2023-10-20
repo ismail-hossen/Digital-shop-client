@@ -24,9 +24,12 @@ const BrandDetailsCard = ({ product }) => {
         >
           Details
         </Link>
-        <button className="bg-green-500 text-white p-2 rounded-md">
+        <Link
+          to={`/add-product/${product._id}`}
+          className="bg-green-500 text-white p-2 rounded-md"
+        >
           Update
-        </button>
+        </Link>
       </div>
     </div>
   );
