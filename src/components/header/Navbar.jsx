@@ -4,16 +4,16 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../authContext/AuthContext";
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout, watchAddToCart } = useContext(AuthContext);
   const [myCart, setMyCart] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/add-to-cart/${user.email}`)
+    fetch(`http://localhost:3000/add-to-cart/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyCart(data));
-  }, [user]);
+  }, [user, watchAddToCart]);
 
   const handleLogout = () => {
     logout().then(() => {

@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../authContext/AuthContext";
+import toast from "react-hot-toast";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const { user } = useContext(AuthContext);
-  console.log(user.email);
+  const { setWatchAddToCart } = useContext(AuthContext);
 
   useEffect(() => {
     fetch(`http://localhost:3000/product-by-id/${id}`)
@@ -16,14 +17,29 @@ const ProductDetails = () => {
   }, [id]);
 
   const addToCart = () => {
-    const body = { email: user.email, ...product };
+    const body = {
+      email: user.email,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      rating: product.rating,
+      brandName: product.brandName,
+      description: product.description,
+      type: product.type,
+    };
+
     fetch("http://localhost:3000/add-to-cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        setWatchAddToCart(data);
+        toast.success("Added In Your Cart!", {
+          position: "top-right",
+        });
+      });
   };
 
   return (

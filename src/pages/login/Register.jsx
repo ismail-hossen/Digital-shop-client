@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../authContext/AuthContext";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [error, setError] = useState(null);
@@ -21,6 +22,9 @@ const Register = () => {
     createUser(form.email.value, form.password.value)
       .then(() => {
         if (json?.status == 200) {
+          toast.success("Successfully created account.", {
+            position: "top-right",
+          });
           updateUserProfile(form.name.value, json.data.url).then(() => {
             console.log("update success");
           });
