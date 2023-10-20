@@ -1,0 +1,56 @@
+[
+  {
+    "brandName": "Apple",
+    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "advertisements": [
+      "https://img.freepik.com/free-photo/elegant-smartphone-composition_23-2149437105.jpg?w=740&t=st=1697763878~exp=1697764478~hmac=75b83e36652f26c7b3253ca34f2847941a71e55a51eb3919ffb989050b2ed7dc",
+      "https://img.freepik.com/free-photo/elegant-smartphone-composition_23-2149437105.jpg?w=740&t=st=1697763878~exp=1697764478~hmac=75b83e36652f26c7b3253ca34f2847941a71e55a51eb3919ffb989050b2ed7dc",
+      "https://img.freepik.com/free-vector/smartphone-with-gradient-wallpaper_23-2147846501.jpg?w=740&t=st=1697765894~exp=1697766494~hmac=ef35b9a347bf8ff79f0a2568dc66ffabebd4b9d12622f30119e9247e1f2bea85"
+    ]
+  },
+  {
+    "brandName": "Microsoft",
+    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "advertisements": [
+      {
+        "image": ""
+      }
+    ]
+  },
+  {
+    "brandName": "Sony",
+    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "advertisements": [
+      {
+        "image": ""
+      }
+    ]
+  },
+  {
+    "brandName": "Samsung",
+    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "advertisements": [
+      {
+        "image": ""
+      }
+    ]
+  },
+  {
+    "brandName": "LG",
+    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "advertisements": [
+      {
+        "image": ""
+      }
+    ]
+  },
+  {
+    "brandName": "Canon",
+    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "advertisements": [
+      {
+        "image": ""
+      }
+    ]
+  }
+]

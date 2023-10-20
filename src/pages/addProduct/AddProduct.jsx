@@ -19,30 +19,32 @@ function AddProduct() {
     })
       .then((res) => res.json())
       .then((data) => {
-        const pData = {
-          image: data.data.url,
-          rating,
-          name: form.name.value,
-          brandName: form.brand.value,
-          type: form.type.value,
-          price: form.price.value,
-          description: form.description.value,
-        };
+        if (data?.data) {
+          const pData = {
+            image: data.data.url,
+            rating,
+            name: form.name.value,
+            brandName: form.brand.value,
+            type: form.type.value,
+            price: form.price.value,
+            description: form.description.value,
+          };
 
-        // upload the product data to the server
-        fetch("http://localhost:3000/add-product", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(pData),
-        })
-          .then((data) => {
-            console.log("product added", data);
+          // upload the product data to the server
+          fetch("http://localhost:3000/add-product", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(pData),
           })
-          .catch((error) => {
-            console.log(error);
-          });
+            .then((data) => {
+              console.log("product added", data);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
       });
   };
 
