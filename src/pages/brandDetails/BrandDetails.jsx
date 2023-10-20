@@ -17,7 +17,9 @@ const BrandDetails = () => {
         setAdImages(filteredData?.advertisements);
       });
 
-    fetch(`http://localhost:3000/products-by-brand/${brand}`)
+    fetch(
+      `https://digital-shop-server-6afgemw8y-ismail-hosens-projects.vercel.app/products-by-brand/${brand}`
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [brand]);

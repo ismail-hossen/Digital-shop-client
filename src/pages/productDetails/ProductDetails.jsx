@@ -11,7 +11,9 @@ const ProductDetails = () => {
   const { setWatchAddToCart } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/product-by-id/${id}`)
+    fetch(
+      `https://digital-shop-server-6afgemw8y-ismail-hosens-projects.vercel.app/product-by-id/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
@@ -28,11 +30,14 @@ const ProductDetails = () => {
       type: product.type,
     };
 
-    fetch("http://localhost:3000/add-to-cart", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    })
+    fetch(
+      "https://digital-shop-server-6afgemw8y-ismail-hosens-projects.vercel.app/add-to-cart",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setWatchAddToCart(data);

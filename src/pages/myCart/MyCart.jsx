@@ -10,13 +10,18 @@ const MyCart = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/add-to-cart/${user.email}`)
+    fetch(
+      `https://digital-shop-server-6afgemw8y-ismail-hosens-projects.vercel.app/add-to-cart/${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [user, watchAddToCart]);
 
   const handleDelete = (id, name) => {
-    fetch(`http://localhost:3000/delete-from-cart/${id}`, { method: "DELETE" })
+    fetch(
+      `https://digital-shop-server-6afgemw8y-ismail-hosens-projects.vercel.app/delete-from-cart/${id}`,
+      { method: "DELETE" }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {

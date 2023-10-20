@@ -10,7 +10,9 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/add-to-cart/${user?.email}`)
+    fetch(
+      `https://digital-shop-server-6afgemw8y-ismail-hosens-projects.vercel.app/add-to-cart/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setMyCart(data));
   }, [user, watchAddToCart]);

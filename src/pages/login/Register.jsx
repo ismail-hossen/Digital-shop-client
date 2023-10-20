@@ -19,21 +19,29 @@ const Register = () => {
     });
     const json = await response.json();
 
-    createUser(form.email.value, form.password.value)
-      .then(() => {
-        if (json?.status == 200) {
-          toast.success("Successfully created account.", {
-            position: "top-right",
-          });
-          updateUserProfile(form.name.value, json.data.url).then(() => {
-            console.log("update success");
-          });
-        }
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        setError(errorMessage);
-      });
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
+    if (passwordPattern.test(form.password.value)) {
+      createUser(form.email.value, form.password.value)
+        .then(() => {
+          if (json?.status == 200) {
+            setError(null);
+            toast.success("Successfully created account.", {
+              position: "top-right",
+            });
+            updateUserProfile(form.name.value, json.data.url).then(() => {
+              console.log("update success");
+            });
+          }
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          setError(errorMessage);
+        });
+    } else {
+      setError(
+        "The password should be 6 characters, a capital letter, a special character"
+      );
+    }
   };
 
   return (

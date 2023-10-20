@@ -10,7 +10,9 @@ function AddProduct() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3000/product-by-id/${id}`)
+      fetch(
+        `https://digital-shop-server-6afgemw8y-ismail-hosens-projects.vercel.app/product-by-id/${id}`
+      )
         .then((res) => res.json())
         .then((data) => setProduct(data));
     }
@@ -43,13 +45,16 @@ function AddProduct() {
           };
 
           // upload the product data to the server
-          fetch("http://localhost:3000/add-product", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(pData),
-          })
+          fetch(
+            "https://digital-shop-server-6afgemw8y-ismail-hosens-projects.vercel.app/add-product",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(pData),
+            }
+          )
             .then((data) => {
               if (data) {
                 toast.success("Product Added!", {
