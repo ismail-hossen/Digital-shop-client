@@ -5,14 +5,18 @@ const BrandCard = ({ brand }) => {
   const { brandName, brandImage } = brand || {};
 
   return (
-    <Link to={`/brand-details/${brandName}`}>
-      <div className="bg-white p-4 rounded-lg shadow-md transition transform hover:scale-105 duration-300 ease-in-out">
-        <img
-          src={brandImage}
-          alt={brandName}
-          className="mx-auto h-24 w-24 lg:h-36 lg:w-36 object-contain"
-        />
-        <h2 className="text-xl mt-4 font-semibold text-center">{brandName}</h2>
+    <Link to={`/brand-details/${brandName}`} className="block p-4">
+      <div className="bg-white p-4 rounded-lg  dark:bg-gray-500 shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out">
+        <div className="relative w-36 h-36 mx-auto lg:w-44 lg:h-44">
+          <img
+            src={brandImage}
+            alt={brandName}
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
+        <h2 className="text-xl mt-4 font-semibold text-center dark:text-gray-200">
+          {brandName}
+        </h2>
       </div>
     </Link>
   );

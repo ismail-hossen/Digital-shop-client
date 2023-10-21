@@ -1,56 +1,48 @@
 [
   {
     "brandName": "Apple",
-    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "brandImage": "https://images.unsplash.com/photo-1612994370726-5d4d609fca1b?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "advertisements": [
-      "https://img.freepik.com/free-photo/elegant-smartphone-composition_23-2149437105.jpg?w=740&t=st=1697763878~exp=1697764478~hmac=75b83e36652f26c7b3253ca34f2847941a71e55a51eb3919ffb989050b2ed7dc",
-      "https://img.freepik.com/free-photo/elegant-smartphone-composition_23-2149437105.jpg?w=740&t=st=1697763878~exp=1697764478~hmac=75b83e36652f26c7b3253ca34f2847941a71e55a51eb3919ffb989050b2ed7dc",
-      "https://img.freepik.com/free-vector/smartphone-with-gradient-wallpaper_23-2147846501.jpg?w=740&t=st=1697765894~exp=1697766494~hmac=ef35b9a347bf8ff79f0a2568dc66ffabebd4b9d12622f30119e9247e1f2bea85"
+      "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&q=80&w=1965&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1549921296-3b0f9a35af35?auto=format&fit=crop&q=80&w=1965&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1543582890-139a4ff9946e?auto=format&fit=crop&q=80&w=1965&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ]
   },
   {
     "brandName": "Microsoft",
-    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "brandImage": "https://images.unsplash.com/photo-1662947036644-ecfde1221ac7?auto=format&fit=crop&q=80&w=2128&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "advertisements": [
-      {
-        "image": ""
-      }
+      "https://images.unsplash.com/photo-1624571409108-e9a41746af53?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1633113215883-a43e36bc6178?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1587613842560-0816bd27a096?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ]
   },
   {
     "brandName": "Sony",
-    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "brandImage": "https://images.unsplash.com/photo-1662948261149-3f0a0ab0181b?auto=format&fit=crop&q=80&w=2128&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "advertisements": [
-      {
-        "image": ""
-      }
+      "https://images.unsplash.com/photo-1540465569259-b57c174b8e77?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ]
   },
   {
     "brandName": "Samsung",
-    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "brandImage": "https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "advertisements": [
-      {
-        "image": ""
-      }
+      "https://images.unsplash.com/photo-1583573636246-18cb2246697f?auto=format&fit=crop&q=80&w=1938&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ]
   },
   {
     "brandName": "LG",
-    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "brandImage": "https://images.unsplash.com/photo-1590664177914-9da6d6e8f0f6?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "advertisements": [
-      {
-        "image": ""
-      }
+      "https://images.unsplash.com/photo-1524856076870-0d765c831d68?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ]
   },
   {
     "brandName": "Canon",
-    "brandImage": "https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149688660.jpg?w=740&t=st=1697712689~exp=1697713289~hmac=b520191d319527a8ab8268e80e54b6c273508574bc538c442523e4be04847ad5",
+    "brandImage": "https://images.unsplash.com/photo-1651922118429-9fad760bb430?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "advertisements": [
-      {
-        "image": ""
-      }
+      "https://images.unsplash.com/photo-1613271724515-07ee114f5ec5?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ]
   }
 ]

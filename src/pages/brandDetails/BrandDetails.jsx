@@ -6,6 +6,7 @@ const BrandDetails = () => {
   const { brand } = useParams();
   const [adImages, setAdImages] = useState([]);
   const [products, setProducts] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     fetch("/brands.json")
@@ -24,42 +25,48 @@ const BrandDetails = () => {
       .then((data) => setProducts(data));
   }, [brand]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === adImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [currentImageIndex, adImages]);
+
   return (
     <div className="container mx-auto py-8">
       {/* advertisements slider start*/}
-      <div className="carousel w-full h-[65vh]">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img src={adImages[0]} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img src={adImages[1]} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img src={adImages[2]} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide1" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
+      <div className="relative w-full max-w-screen-2xl mx-auto h-64 md:h-80 lg:h-96">
+        <img
+          src={adImages[currentImageIndex]}
+          alt="Advertisement"
+          className="w-full h-full object-cover rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105"
+        />
+        <div className="absolute top-0 left-0 w-full h-full flex justify-between items-center">
+          <button
+            className="text-2xl text-white bg-gray-800 bg-opacity-50 p-2 rounded-full transition-transform duration-300 transform hover:scale-110"
+            onClick={() => {
+              setCurrentImageIndex((prevIndex) =>
+                prevIndex === 0 ? adImages.length - 1 : prevIndex - 1
+              );
+            }}
+          >
+            &lt;
+          </button>
+          <button
+            className="text-2xl text-white bg-gray-800 bg-opacity-50 p-2 rounded-full transition-transform duration-300 transform hover:scale-110"
+            onClick={() => {
+              setCurrentImageIndex((prevIndex) =>
+                prevIndex === adImages.length - 1 ? prevIndex : prevIndex + 1
+              );
+            }}
+          >
+            &gt;
+          </button>
         </div>
       </div>
       {/* advertisements slider end*/}

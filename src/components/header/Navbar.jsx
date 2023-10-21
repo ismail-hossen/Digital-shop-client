@@ -2,6 +2,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Banner from "./Banner";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../authContext/AuthContext";
+import useDarkMode from "../../hooks/darkMode/useDarkMode";
+import { CiDark, CiLight } from "react-icons/ci";
 
 const Navbar = () => {
   const { user, logout, watchAddToCart } = useContext(AuthContext);
@@ -23,9 +25,11 @@ const Navbar = () => {
     });
   };
 
+  const toggleDarkMode = useDarkMode();
+
   return (
     <>
-      <div className="navbar">
+      <div className="navbar dark:bg-gray-800 dark:text-white">
         <div className="flex-1">
           <Link to="/" className="btn btn-ghost normal-case text-xl">
             DigitalShop
@@ -33,16 +37,30 @@ const Navbar = () => {
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
+            <li
+              onClick={toggleDarkMode}
+              className="flex items-center justify-center border rounded-full text-black dark:text-white"
+            >
+              <h5 className="dark:hover:text-white">
+                {toggleDarkMode ? <CiDark /> : <CiLight />}
+              </h5>
+            </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" className="dark:hover:text-white">
+                Home
+              </Link>
             </li>
             {user ? (
               <li>
-                <Link to="/add-product">Add Product</Link>
+                <Link to="/add-product" className="dark:hover:text-white">
+                  Add Product
+                </Link>
               </li>
             ) : (
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/login" className="dark:hover:text-white">
+                  Login
+                </Link>
               </li>
             )}
           </ul>
@@ -74,7 +92,7 @@ const Navbar = () => {
                   tabIndex={0}
                   className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
                 >
-                  <div className="card-body">
+                  <div className="card-body dark:bg-gray-500">
                     <span className="font-bold text-lg">
                       {myCart.length} Items
                     </span>
@@ -101,13 +119,10 @@ const Navbar = () => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  dark:bg-gray-500"
                 >
                   <li>
-                    <a className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
-                    </a>
+                    <a>Profile</a>
                   </li>
                   <li>
                     <a>Settings</a>
